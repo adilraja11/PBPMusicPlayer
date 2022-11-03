@@ -16,7 +16,9 @@ public class NextActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_next);
 
-        Intent intent = getIntent();
+        String judul = getIntent().getStringExtra("TITLE");
+        String artis = getIntent().getStringExtra("ARTIST");
+
 
         TextView title = findViewById(R.id.title);
         TextView artist = findViewById(R.id.artist);
@@ -24,5 +26,7 @@ public class NextActivity extends AppCompatActivity {
         TextView totaltime = findViewById(R.id.totaltime);
         ImageView imagemusic = findViewById(R.id.artWork);
 
+        title.setText(judul);
+        artist.setText(artis);
     }
 }
