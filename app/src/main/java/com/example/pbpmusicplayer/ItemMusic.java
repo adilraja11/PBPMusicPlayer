@@ -4,11 +4,13 @@ public class ItemMusic {
     String title;
     String artist;
     int image;
+    int music;
 
-    public ItemMusic(String title, String artist, int image) {
+    public ItemMusic(String title, String artist, int image, int music) {
         this.title = title;
         this.artist = artist;
         this.image = image;
+        this.music = music;
     }
 
     public String getTitle() {
@@ -33,5 +35,13 @@ public class ItemMusic {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public int getMusic() {
+        return music;
+    }
+
+    public void setMusic(int music) {
+        this.music = music;
     }
 }

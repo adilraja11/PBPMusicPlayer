@@ -2,6 +2,8 @@ package com.example.pbpmusicplayer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
@@ -32,10 +36,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.artist.setText(itemMusics.get(position).getArtist());
         holder.imageView.setImageResource(itemMusics.get(position).getImage());
 
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
+        holder.btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, NextActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
             }
         });
     }
