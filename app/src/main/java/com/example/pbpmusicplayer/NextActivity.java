@@ -2,6 +2,7 @@ package com.example.pbpmusicplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,6 +15,8 @@ public class NextActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_next);
+
+        Intent intent = getIntent();
 
         TextView title = findViewById(R.id.title);
         TextView artist = findViewById(R.id.artist);
