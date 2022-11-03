@@ -36,7 +36,7 @@
         android:id="@+id/artWork"
         android:layout_width="322dp"
         android:layout_height="321dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/ic_music_note"
         android:backgroundTint="@android:color/darker_gray"
         android:backgroundTintMode="screen"
