@@ -1,9 +1,6 @@
 package com.example.pbpmusicplayer;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-public class ItemMusic implements Parcelable {
+public class ItemMusic {
     String title;
     String artist;
     int image;
@@ -15,25 +12,6 @@ public class ItemMusic implements Parcelable {
         this.image = image;
         this.music = music;
     }
-
-    protected ItemMusic(Parcel in) {
-        title = in.readString();
-        artist = in.readString();
-        image = in.readInt();
-        music = in.readInt();
-    }
-
-    public static final Creator<ItemMusic> CREATOR = new Creator<ItemMusic>() {
-        @Override
-        public ItemMusic createFromParcel(Parcel in) {
-            return new ItemMusic(in);
-        }
-
-        @Override
-        public ItemMusic[] newArray(int size) {
-            return new ItemMusic[size];
-        }
-    };
 
     public String getTitle() {
         return title;
@@ -67,16 +45,4 @@ public class ItemMusic implements Parcelable {
         this.music = music;
     }
 
-    @Override
-    public int describeContents() {
-        return this.hashCode();
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(title);
-        parcel.writeString(artist);
-        parcel.writeInt(image);
-        parcel.writeInt(music);
-    }
 }
