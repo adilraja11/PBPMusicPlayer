@@ -7,6 +7,7 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,8 +40,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ItemMusic itemMusic = (ItemMusic) itemMusics.clone();
                 Intent intent = new Intent(context, NextActivity.class);
-                intent.putParcelableArrayListExtra("itemmusic", itemMusics);
+                intent.putExtra("TITLE", itemMusic.getTitle());
+                intent.putExtra("ARTIST", itemMusic.getArtist());
+                intent.putExtra("IMAGE", itemMusic.getImage());
+                intent.putExtra("MUSIC", itemMusic.getMusic());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
