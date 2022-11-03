@@ -17,11 +17,11 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     Context context;
-    List<ItemMusic> itemMusics;
+    ArrayList<ItemMusic> itemMusics;
 
     public MyAdapter(Context context, List<ItemMusic> itemMusics) {
         this.context = context;
-        this.itemMusics = itemMusics;
+        this.itemMusics = (ArrayList<ItemMusic>) itemMusics;
     }
 
     @NonNull
@@ -40,6 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, NextActivity.class);
+                intent.putParcelableArrayListExtra("itemmusic", itemMusics);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
